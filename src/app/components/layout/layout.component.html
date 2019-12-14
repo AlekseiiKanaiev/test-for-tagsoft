@@ -8,12 +8,11 @@
             </div>
             <div id="progress">
                 <p id="progress-title">Месячный план выполнен на</p>
-                <progressbar [value] = 'barValue' type = 'info' id = 'progress-bar'>
-                    <!-- {{ barValue }}% -->
-                </progressbar>
-                <!-- <progress value = "{{barValue}}" max = '100' id = 'progress-bar'>
+                <!-- <progressbar [value] = 'barValue' type = 'info' id = 'progress-bar'>
+                </progressbar> -->
+                <progress value = "{{barValue}}" max = '100' id = 'progress-bar'>
                     {{ barValue }}%
-                </progress> -->
+                </progress>
                 <p id="barvalue">{{ barValue }}%</p>
                 <div id="progress-bottom">
                     <button (click) = 'onClick()'>Продолжить</button>
