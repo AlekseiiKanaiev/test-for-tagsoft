@@ -16,3 +16,17 @@
         <td>{{ char.status }}</td>
     </tr>
 </table>
+<pagination
+    (pageChanged) = 'pageChanged($event)'
+    [totalItems] = 'totalItems'
+    [maxSize] = 'maxSize'
+    [itemsPerPage] = 'itemsPerPage'
+    [boundaryLinks]="true"
+    [rotate]="false"
+    previousText="&lsaquo;"
+    nextText="&rsaquo;" 
+    firstText="&laquo;"
+    lastText="&raquo;"
+    class="pagination justify-content-center"
+>
+</pagination>

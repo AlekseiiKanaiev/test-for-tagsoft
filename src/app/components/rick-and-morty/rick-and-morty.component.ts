@@ -3,7 +3,7 @@ import { GetDataService } from 'src/app/_services/getData.service';
 import { Data } from 'src/app/_models/data.model';
 import { Character } from 'src/app/_models/character.model';
 import { Subscription } from 'rxjs';
-
+import { PageChangedEvent } from 'ngx-bootstrap';
 
 @Component({
   selector: 'app-rick-and-morty',
@@ -11,8 +11,12 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./rick-and-morty.component.scss']
 })
 export class RickAndMortyComponent implements OnInit, OnDestroy {
-  characters: Character[];
   private sub: Subscription;
+
+  characters: Character[];
+  totalItems: number;
+  maxSize = 5;
+  itemsPerPage = 20;
 
   constructor(private gts: GetDataService) { }
 
@@ -21,8 +25,19 @@ export class RickAndMortyComponent implements OnInit, OnDestroy {
       (data: Data) => {
         console.log(data);
         this.characters = data.results;
+        this.totalItems = data.info.count;
+        // this.itemsPerPage = data.results.length;
       },
       error => console.log('Error: ' + error)
+    );
+
+  }
+
+  pageChanged(event: PageChangedEvent) {
+    console.log(event);
+    const url = `https://rickandmortyapi.com/api/character/?page=${event.page}`;
+    this.gts.getData(url).subscribe(
+      data => this.characters = data.results
     );
   }
 
