@@ -1,9 +1,9 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, TemplateRef } from '@angular/core';
 import { GetDataService } from 'src/app/_services/getData.service';
 import { Data } from 'src/app/_models/data.model';
 import { Character } from 'src/app/_models/character.model';
 import { Subscription } from 'rxjs';
-import { PageChangedEvent } from 'ngx-bootstrap';
+import { PageChangedEvent, BsModalService, BsModalRef } from 'ngx-bootstrap';
 
 @Component({
   selector: 'app-rick-and-morty',
@@ -13,12 +13,13 @@ import { PageChangedEvent } from 'ngx-bootstrap';
 export class RickAndMortyComponent implements OnInit, OnDestroy {
   private sub: Subscription;
 
+  modalRef: BsModalRef;
   characters: Character[];
   totalItems: number;
   maxSize = 5;
   itemsPerPage = 20;
 
-  constructor(private gts: GetDataService) { }
+  constructor(private gts: GetDataService, private bsModServ: BsModalService) { }
 
   ngOnInit() {
     this.sub = this.gts.getData().subscribe(
@@ -26,18 +27,22 @@ export class RickAndMortyComponent implements OnInit, OnDestroy {
         console.log(data);
         this.characters = data.results;
         this.totalItems = data.info.count;
-        // this.itemsPerPage = data.results.length;
       },
       error => console.log('Error: ' + error)
     );
 
   }
 
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.bsModServ.show(template);
+  }
+
   pageChanged(event: PageChangedEvent) {
-    console.log(event);
+    // console.log(event);
     const url = `https://rickandmortyapi.com/api/character/?page=${event.page}`;
-    this.gts.getData(url).subscribe(
-      data => this.characters = data.results
+    this.sub = this.gts.getData(url).subscribe(
+      data => this.characters = data.results,
+      error => console.log('Error: ' + error)
     );
   }
 

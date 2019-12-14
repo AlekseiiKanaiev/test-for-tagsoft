@@ -1,21 +1,45 @@
 <header>
-    <a routerLink = '/layout'>Layout</a>
+    <h1>Charactres from the Rick and Morty</h1>
 </header>
-<p>rick-and-morty works!</p>
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Gender</th>
-        <th>Species</th>
-        <th>Status</th>
-    </tr>
-    <tr *ngFor="let char of characters">
-        <td>{{ char.name }}</td>
-        <td>{{ char.gender }}</td>
-        <td>{{ char.species }}</td>
-        <td>{{ char.status }}</td>
-    </tr>
-</table>
+<div id="characters">
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Species</th>
+            <th>Status</th>
+        </tr>
+        <tr *ngFor="let char of characters" class="chararacter" (click) = 'openModal(template)'>
+            <td>{{ char.name }}</td>
+            <td>{{ char.gender }}</td>
+            <td>{{ char.species }}</td>
+            <td>{{ char.status }}</td>
+            <ng-template #template>
+                <div class="modal-header">
+                    <h4 class="modal-title">{{ char.name }}</h4>
+                    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img class="image" src="{{ char.image }}" alt='{{ char.name }}'>
+                    <div class="content">
+                        <ul>
+                            <li>ID: {{ char.id }}</li>
+                            <li>Gender: {{ char.gender }}</li>
+                            <li>Species: {{ char.species }}</li>
+                            <li>Status: {{ char.status }}</li>
+                            <li>Location: {{ char.location.name }}</li>
+                            <li>Origin: {{ char.origin.name }}</li>
+                            <li>Type: {{ char.type }}</li>
+                            <li>Episode: exists in {{ char.episode.length }} episodes</li>
+                        </ul>
+                    </div>
+                </div>
+            </ng-template>
+        </tr>
+    </table>
+</div>
 <pagination
     (pageChanged) = 'pageChanged($event)'
     [totalItems] = 'totalItems'
@@ -30,3 +54,7 @@
     class="pagination justify-content-center"
 >
 </pagination>
+<div id="second-part">
+    <h4>Link to seccond part of the test</h4>
+    <a routerLink = '/layout'>Layout</a>
+</div>
