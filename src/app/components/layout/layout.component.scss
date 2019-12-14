@@ -1,0 +1,140 @@
+#outer{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#wrapper{
+    width: 280px;
+    height: 192px;
+    border-radius: 4px;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.45);
+}
+#inner{
+    // width: 260px;
+    // height: -webkit-fill-available;
+    // margin: 20px;
+    // border: 2px solid blue;
+    // font-family: 'Arial MT';
+}
+#inner p {
+    // margin: 0;
+}
+#text{
+    margin: 23px 27px 0px 27px;
+    width: 209px;
+    height: 50px;
+    color: #808080;
+    font-family: "Arial MT";
+    font-size: 12px;
+    font-weight: 400;
+}
+#header{
+    color: #333333;
+    font-family: "Arial - Bold MT";
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 16px;
+}
+#text-light{
+    margin: 0;
+    font-family: Arial;
+    letter-spacing: -0.5px;
+    
+}
+#money {
+    color: #333333;
+    font-family: Arial;
+    letter-spacing: -0.5px;
+    line-height: 12px;
+}
+
+#progress{
+    margin: auto;
+    margin-top: 10px;
+    padding: 9px;
+    width: 248px;
+    height: 94px;
+    border: 1px solid #9ecbe8;
+    border-radius: 4px;
+    background-color: #000000;
+    background-image: linear-gradient(to top, #effaff 0%, #ffffff 100%);
+}
+#progress-title{
+    width: 175px;
+    height: 10px;
+    color: #262626;
+    font-family: "Arial - Bold MT";
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+}
+#progress-bar{
+    width: 230px;
+    height: 15px;
+    border: 1px solid #9ecbe8;
+    box-shadow: 0 1px 0 #ffffff;
+    background-color: #fff;
+    transition: width 2s ease;
+}
+#barvalue{
+    color: #1e4b69;
+    position: absolute;
+    font-family: "Arial - Bold MT";
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    margin-top: -15px;
+    margin-left: 100px;
+}
+// #progress-bar::-webkit-progress-value, #progress-bar::-webkit-progress-value {
+//     background: #9ecbe8;
+//   }
+// #progress-bar::-moz-progress-bar, #progress-bar::-webkit-progress-bar {
+// background: #fff;
+// }
+#progress-bottom{
+    margin-top: 6px;
+}
+button{
+    color: #ffffff;
+    font-family: "Arial MT";
+    font-size: 13px;
+    font-weight: 400;
+    width: 115px;
+    height: 27px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.58), inset 0 2px 0 rgba(255, 255, 255, 0.25);
+    border: 1px solid #0d1c5f;
+    border-radius: 6px;
+    background-color: #ffffff;
+    background-image: linear-gradient(to top, #071b6f 0%, #6b81df 100%);
+}
+span{
+    margin-left: 8px;
+    width: 85px;
+    height: 11px;
+    color: #999999;
+    font-family: "Arial MT";
+    font-size: 11px;
+    font-weight: 400;
+}
+
+#box-number{
+    position: absolute;
+    top: calc(50% - 96px);
+    right: calc(50% - 140px);
+    width: 24px;
+    height: 17px;
+    line-height: 17px;
+    text-align: center;
+    font-size: 12px;
+    font-family: 'Arial - Bold MT';
+    font-weight: 400;
+    color: #fff;
+    box-shadow: 0 1px 4px #fff, 0 0 3px rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    background-color: #000000;
+    background-image: linear-gradient(to top, #148311 0%, #a8fe91 100%);
+}
