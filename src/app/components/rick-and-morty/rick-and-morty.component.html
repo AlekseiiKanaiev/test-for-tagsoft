@@ -4,12 +4,12 @@
 <div id="characters">
     <table>
         <tr>
-            <th>Name</th>
+            <th class="sort" (click) = sort()>Name <span><fa-icon [icon]='angleIcon'></fa-icon></span></th>
             <th>Gender</th>
             <th>Species</th>
             <th>Status</th>
         </tr>
-        <tr *ngFor="let char of characters" class="chararacter" (click) = 'openModal(template)'>
+        <tr *ngFor="let char of curChars" class="chararacter" (click) = 'openModal(template)'>
             <td>{{ char.name }}</td>
             <td>{{ char.gender }}</td>
             <td>{{ char.species }}</td>
@@ -46,7 +46,7 @@
     [maxSize] = 'maxSize'
     [itemsPerPage] = 'itemsPerPage'
     [boundaryLinks]="true"
-    [rotate]="false"
+    [rotate]="rotate"
     previousText="&lsaquo;"
     nextText="&rsaquo;" 
     firstText="&laquo;"

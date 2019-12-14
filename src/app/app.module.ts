@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 import { PaginationModule, ModalModule } from 'ngx-bootstrap';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,7 +22,8 @@ import { GetDataService } from './_services/getData.service';
     AppRoutingModule,
     HttpClientModule,
     PaginationModule.forRoot(),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    FontAwesomeModule
   ],
   providers: [GetDataService],
   bootstrap: [AppComponent]

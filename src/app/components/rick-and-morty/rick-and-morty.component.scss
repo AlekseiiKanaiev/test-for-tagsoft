@@ -11,12 +11,18 @@ table{
 tr{
     border-bottom: 1px solid #000;
 }
+th{
+    font-size: 18px;
+}
 .chararacter{
     cursor: pointer;
 }
     .chararacter:hover{
         background-color: grey;
     }
+.sort{
+    cursor: pointer;
+}
 .image {
     display: block;
     margin: auto;
