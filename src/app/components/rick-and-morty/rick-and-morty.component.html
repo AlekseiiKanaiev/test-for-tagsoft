@@ -2,3 +2,17 @@
     <a routerLink = '/layout'>Layout</a>
 </header>
 <p>rick-and-morty works!</p>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Species</th>
+        <th>Status</th>
+    </tr>
+    <tr *ngFor="let char of characters">
+        <td>{{ char.name }}</td>
+        <td>{{ char.gender }}</td>
+        <td>{{ char.species }}</td>
+        <td>{{ char.status }}</td>
+    </tr>
+</table>
