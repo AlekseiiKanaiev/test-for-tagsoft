@@ -1,28 +1,28 @@
-<div id="outer">
-    <div id="wrapper">
-        <div id="inner">
-            <div id="text">
-                <p id="header">Обучение по продажам</p>
-                <p id="text-light">Вы сделали 13 продаж и заработали:</p>
-                <p id="money">$ 2 000</p>
-            </div>
-            <div id="progress">
-                <p id="progress-title">Месячный план выполнен на</p>
-                <!-- <progressbar [value] = 'barValue' type = 'info' id = 'progress-bar'>
-                </progressbar> -->
-                <progress value = "{{barValue}}" max = '100' id = 'progress-bar'>
-                    {{ barValue }}%
-                </progress>
-                <p id="barvalue">{{ barValue }}%</p>
-                <div id="progress-bottom">
-                    <button (click) = 'onClick()'>Продолжить</button>
-                    <span class="light">Осталось 8 дней</span>
+<div id="layout">
+    <div id="outer">
+        <div id="wrapper">
+            <div id="inner" #bgimg [ngStyle]="{backgroundSize: expression}">
+                <div id="text">
+                    <p id="header">Обучение по продажам</p>
+                    <p id="text-light">Вы сделали 13 продаж и заработали:</p>
+                    <p id="money">$ 2 000</p>
+                </div>
+                <div id="progress">
+                    <p id="progress-title">Месячный план выполнен на</p>
+                    <progress value = "{{barValue}}" max = '100' id = 'progress-bar'>
+                        {{ barValue }}%
+                    </progress>
+                    <p id="barvalue">{{ barValue }}%</p>
+                    <div id="progress-bottom">
+                        <button (click) = 'onClick()'>Продолжить</button>
+                        <span class="light">Осталось 8 дней</span>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div id="box-number">
-        25
+        <div id="box-number" #numbox>
+            25
+        </div>
     </div>
 </div>
 

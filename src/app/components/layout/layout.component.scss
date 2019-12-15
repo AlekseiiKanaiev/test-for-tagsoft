@@ -1,13 +1,21 @@
-#outer{
+#layout{
     width: 100%;
     height: 100vh;
+    min-width: 210px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#outer{
+    width: 350px;
+    height: 231px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 #wrapper{
-    width: 280px;
-    height: 192px;
+    margin: 22px 35px;
+    width: 100%;
     border-radius: 4px;
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.45);
     display: flex;
@@ -16,23 +24,31 @@
 
 }
 #inner{
-    width: 273px;
-    height: 185px;
+    margin: 2px 3.5px 5px 3.5px;
+    width: 100%;
+    min-width: 134px;
+    max-height: 300px;
     background-image: url('../../../assets/layer.png');
+    background-attachment: fixed;
+    background-position: center center;
     background-repeat: no-repeat;
+    font-family: Arial;
+    // -webkit-background-size: auto;
+    // -moz-background-size: auto;
+    // -o-background-size: auto;
+    // background-size: auto;
+    // filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../../assets/layer.png',     sizingMethod='scale');
+    // -ms-filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../../assets/layer.png', sizingMethod='scale');
 }
 #text{
-    margin: 20px 27px 0px 27px;
-    width: 209px;
-    height: 50px;
+    margin: 21px 27px 0px 27px;
     color: #808080;
-    font-family: "Arial MT";
     font-size: 12px;
     font-weight: 400;
 }
 #header{
     color: #333333;
-    font-family: "Arial - Bold MT";
+    font-family: Arial, "Arial - Bold MT";
     font-size: 16px;
     font-weight: 700;
     margin-bottom: 7px;
@@ -53,99 +69,107 @@
 }
 
 #progress{
-    margin: auto;
-    margin-top: 9px;
+    margin: 9px 12px 11px 12px;
     padding: 9px;
-    width: 248px;
-    height: 94px;
-    border: 1px solid #9ecbe8;
+    border: 1px solid #d4eaf7;
     border-radius: 4px;
-    background-color: #000000;
     background-image: linear-gradient(to top, #effaff 0%, #ffffff 100%);
 }
 #progress-title{
-    width: 175px;
-    height: 10px;
     color: #262626;
-    font-family: "Arial - Bold MT";
+    font-family: Arial, "Arial - BoldMT";
     font-size: 12px;
-    font-weight: 400;
-    line-height: 16px;
+    font-weight: 700;
+    line-height: 10px;
     margin-bottom: 9px;
 }
 #progress-bar{
-    width: 230px;
+    width: 100%;
     height: 15px;
     border: 1px solid #9ecbe8;
-    box-shadow: 0 1px 0 #ffffff;
-    background-color: #fff;
-    transition: width 2s;
+    
 }
-#barvalue{
-    color: #1e4b69;
-    position: absolute;
-    font-family: "Arial - Bold MT";
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 16px;
-    margin-top: -21px;
-    left: calc(50% - 11px);
+#progress-bar[value]{
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
 #progress-bar::-webkit-progress-value{
     background: #9ecbe8;
-    transition: width 1s ease;
+    transition: width 2s ease;
 }
 #progress-bar::-webkit-progress-bar{
     background: #fff;
 }
-#progress-bar::-moz-progress-value {
-    background: #9ecbe8;
-    transition: width 1s ease;
-}
 #progress-bar::-moz-progress-bar{
-    background: #fff;
+    background: #9ecbe8;
+    transition: width 2s ease;
+    color: #fff;
 }
-
+#progress-bar::-ms-fill{
+    background: #9ecbe8;
+    transition: width 2s ease;
+}
+#barvalue{
+    color: #1e4b69;
+    position: absolute;
+    font-family: 'Arial', "Arial - Bold MT";
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+    margin-top: -22px;
+    left: calc(50% - 11px);
+}
 #progress-bottom{
     margin-top: 6px;
 }
 button{
     color: #ffffff;
-    font-family: "Arial MT";
+    font-family: Arial, "Arial MT";
     font-size: 13px;
     font-weight: 400;
-    width: 115px;
+    width: 50%;
     height: 27px;
     box-shadow: 0 1px 0 rgba(255, 255, 255, 0.58), inset 0 2px 0 rgba(255, 255, 255, 0.25);
     border: 1px solid #0d1c5f;
     border-radius: 6px;
-    background-color: #ffffff;
     background-image: linear-gradient(to top, #071b6f 0%, #6b81df 100%);
+    @media only screen and (max-width: 300px){
+        display: block;
+        margin: auto;
+        font-size: 12px;
+        width: fit-content;
+    }
 }
 span{
     margin-left: 8px;
-    width: 85px;
-    height: 11px;
     color: #999999;
     font-family: "Arial MT";
     font-size: 11px;
     font-weight: 400;
+    @media only screen and (max-width: 300px){
+        text-align: center;
+        margin: 6px auto 0 auto ;
+        display: block;
+    }
 }
 
 #box-number{
     position: absolute;
-    top: calc(50% - 96px);
     right: calc(50% - 140px);
     width: 24px;
     height: 17px;
     line-height: 17px;
     text-align: center;
     font-size: 12px;
-    font-family: 'Arial - Bold MT';
+    font-family: Arial, 'Arial - Bold MT';
     font-weight: 400;
     color: #fff;
-    box-shadow: 0 1px 4px #fff, 0 0 3px rgba(255, 255, 255, 0.75);
     border: 1px solid rgba(255, 255, 255, 0.9);
-    background-color: #000000;
+    border-radius: 4px;
     background-image: linear-gradient(to top, #148311 0%, #a8fe91 100%);
+    @media only screen and (max-width: 350px){
+        right: 35px;
+    }
 }
+
+
