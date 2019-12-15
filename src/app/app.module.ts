@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
-import { PaginationModule, ModalModule, ProgressbarModule } from 'ngx-bootstrap';
+import { PaginationModule, ModalModule } from 'ngx-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -23,7 +23,6 @@ import { GetDataService } from './_services/getData.service';
     HttpClientModule,
     PaginationModule.forRoot(),
     ModalModule.forRoot(),
-    ProgressbarModule.forRoot(),
     FontAwesomeModule
   ],
   providers: [GetDataService],
