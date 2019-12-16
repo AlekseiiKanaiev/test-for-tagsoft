@@ -9,13 +9,10 @@
                 </div>
                 <div id="progress">
                     <p id="progress-title">Месячный план выполнен на</p>
-                    <!-- <progress value = "{{barValue}}" max = '100' id = 'progress-bar'>
-                        {{ barValue }}%
-                    </progress> -->
                     <div id="progress-bar">
-                        <div id="progress-value" #progress></div>
+                        <div id="progress-value" [ngStyle]="{width: barValue}"></div>
                     </div>
-                    <p id="barvalue">{{ barValue }}%</p>
+                    <p id="barvalue">{{ barValue }}</p>
                     <div id="progress-bottom">
                         <button (click) = 'onClick()'>Продолжить</button>
                         <span class="light">Осталось 8 дней</span>

@@ -6,11 +6,10 @@ import { Component, OnInit, HostListener, ViewChild, ElementRef, AfterViewInit }
   styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent implements OnInit, AfterViewInit {
-  barValue = 75;
+  barValue = '75%';
 
   @ViewChild('bgimg', {static: false}) inner: ElementRef;
   @ViewChild('numbox', {static: false}) numbox: ElementRef;
-  @ViewChild('progress', {static: false}) bar: ElementRef;
 
   @HostListener('window:resize', ['$event.target'])
   onResize() {
@@ -30,13 +29,11 @@ export class LayoutComponent implements OnInit, AfterViewInit {
     console.log(this.inner);
     const height = this.inner.nativeElement.clientHeight;
     const width = this.inner.nativeElement.clientWidth;
-    this.bar.nativeElement.style.width = `${this.barValue}%`;
     this.inner.nativeElement.style.backgroundSize = `${width}px ${height}px`;
     this.numbox.nativeElement.style.top = `calc(50% - ${height / 2 + 4}px)`;
   }
 
   onClick() {
-    this.barValue = Math.floor(Math.random() * (100 - 10) + 10);
-    this.bar.nativeElement.style.width = `${this.barValue}%`;
+    this.barValue = Math.floor(Math.random() * (100 - 10) + 10) + '%';
   }
 }
